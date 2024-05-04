@@ -1,4 +1,5 @@
 import Categorized from "@/components/Categorized";
+import { connectToDataBase } from "@/dbconnect/connector";
 import { getRecipesByCat } from "@/query/queries";
 
 export const metadata = {
@@ -7,6 +8,7 @@ export const metadata = {
 };
 
 export default async function Category({ params: { category } }) {
+  await connectToDataBase();
   const cate = decodeURIComponent(category).replace(/_/g, " ");
   const recipes = await getRecipesByCat(cate);
 
