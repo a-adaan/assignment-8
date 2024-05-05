@@ -6,7 +6,10 @@ import Telegram from "./shareButtons/Telegram";
 import Twitter from "./shareButtons/Twitter";
 
 export default function ShareButton({ name }) {
-  const url = `http://localhost:3000/details/${name.replace(/\s+/g, "_")}`;
+  const url = `https://khanakhazana-adaan.netlify.app/details/${name.replace(
+    /\s+/g,
+    "_"
+  )}`;
   const [show, setShow] = useState(false);
   function toggleShow() {
     setShow(!show);
